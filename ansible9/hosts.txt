@@ -1,0 +1,4 @@
+
+[ALL_LINUX]
+ubuntu2 ansible_host=192.168.0.198
+ubuntu3 ansible_host=192.168.0.149

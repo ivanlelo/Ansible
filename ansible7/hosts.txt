@@ -1,0 +1,10 @@
+
+[PROD]
+ubuntu2 ansible_host=192.168.0.198  owner=Petya
+
+[STAGING]
+ubuntu3 ansible_host=192.168.0.149  owner=Vasya
+
+[ALL_LINUX:children]
+PROD
+STAGING

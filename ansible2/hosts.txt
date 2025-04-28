@@ -1,0 +1,4 @@
+[PROD_SERVERS_WEB]
+ubuntu1 ansible_host=192.168.0.137	owner=Vasya
+ubuntu2 ansible_host=192.168.0.146	owner=Petya
+ubuntu3 ansible_host=192.168.0.198	owner=Nikolay

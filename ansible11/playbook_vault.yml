@@ -1,0 +1,29 @@
+
+---
+- name: Ansible lesson 11
+  hosts: all
+  become: yes
+
+  vars:
+    admin_password: !vault |
+          $ANSIBLE_VAULT;1.1;AES256
+          35333238323839353433333335613830366533313964393433353434336563663666343564386234
+          3837633564326236363238356139343932346266316633620a333934616163386363336631646462
+          63353965656364656230353766386434306437616163316665656330333366366237303264633837
+          3432663336393565610a633538636439306364616332366138396162323831313061353466306239
+          3137
+
+
+  tasks:
+  - name: Install package Tree
+    apt: name=tree state=latest
+
+  - name: Create Config file
+    copy:
+      dest: "/home/ubuntu/myconfig.conf"
+      content: |
+        port = 9092
+        log = 7days
+        home = /ept/kafka/bin
+        user = admin
+        password = {{ admin_password }}
